@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ollama Local Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="chat-container">
+
+        <header>
+            <h1>Ollama Local Chat</h1>
+
+            <div class="controls">
+                <select id="model-select">
+                    <option value="">Loading models...</option>
+                </select>
+
+                <label>
+                    <input type="checkbox" id="think-toggle">
+                    Thinking
+                </label>
+
+                <button id="new-chat">New Chat</button>
+                <div class="ai-settings">
+    <input
+        type="text"
+        id="system-prompt"
+        placeholder="System prompt (optional)"
+        aria-label="System prompt"
+    >
+
+    <label for="temperature">
+        Temperature:
+        <span id="temperature-value">0.7</span>
+    </label>
+
+    <input
+        type="range"
+        id="temperature"
+        min="0"
+        max="1"
+        step="0.1"
+        value="0.7"
+    >
+</div>
+            </div>
+        </header>
+
+        <section id="chat-messages" aria-label="Conversation">
+            <!-- Chat messages will appear here -->
+        </section>
+
+        <form id="chat-form">
+            <input
+                type="text"
+                id="message-input"
+                placeholder="Type your message..."
+                required
+            >
+
+            <button type="submit" id="send-btn">Send</button>
+            <button type="button" id="stop-btn" disabled>Stop</button>
+        </form>
+
+        <p id="error-message" role="alert"></p>
+
+    </main>
+</body>
+</html>
